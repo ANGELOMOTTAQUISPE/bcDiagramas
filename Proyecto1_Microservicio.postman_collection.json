@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "e1988093-1a04-4a40-92fd-48726ef81b1e",
+		"name": "Proyecto1_Microservicio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Proyecto1",
+			"item": [
+				{
+					"name": "Client",
+					"item": [
+						{
+							"name": "POST_RegistrarClient",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"PEPITO SAC\",\r\n    \"documentNumber\":\"21547856985\",\r\n    \"documentType\": \"RUC\",\r\n    \"phoneNumber\": \"963258745\",\r\n    \"email\": \"PEPITO@gmail.com\",\r\n    \"typeClient\": {\r\n        \"clientType\": [\"movil\",\"empresarial\"],\r\n        \"imei\": \"96589632454\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/client",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"client"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE_EliminarClient",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/client/631266b0da06c96d9dd01e25",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"client",
+										"631266b0da06c96d9dd01e25"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_ListarClient",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8085/api/client",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"client"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT_ActualizarClient",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\": \"631f6692a7aea26b5b7386ab\",\r\n    \"name\": \"PEPITO SAC\",\r\n    \"documentNumber\": \"21547856985\",\r\n    \"documentType\": \"RUC\",\r\n    \"phoneNumber\": \"963258745\",\r\n    \"email\": \"PEPITO@gmail.com\",\r\n    \"typeClient\": {\r\n        \"clientType\": [\r\n            \"movil\",\r\n            \"empresarial\"\r\n        ],\r\n        \"imei\": \"96589632454\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8085/api/client",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8085",
+									"path": [
+										"api",
+										"client"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "POST_RegistrarAccount",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountNumber\": \"0235450744470689689\",\r\n  \"accountType\": \"a\",\r\n  \"minimammount\": 0,\r\n  \"debitCardNumber\":\"56465465465465465\",\r\n  \"ammountmovementInitial\":0,\r\n  \"idClient\": \"631ed7db8e1a345abc661472\",\r\n  \"documentNumber\": \"481236586\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8086/api/account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8086",
+									"path": [
+										"api",
+										"account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_ListarAccount",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountNumber\": \"02354507444706876327\",\r\n  \"accountType\": \"cc\",\r\n  \"debitCardNumber\": \"4006889513834539\",\r\n  \"minimammount\": 0,\r\n  \"ammountmovementInitial\":0,\r\n  \"idClient\": \"630ec2848842d153ee2b592a\",\r\n  \"documentNumber\": \"21563258745\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8086/api/account/documentNumberandaccountType/481236586/m",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8086",
+									"path": [
+										"api",
+										"account",
+										"documentNumberandaccountType",
+										"481236586",
+										"m"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Credit",
+					"item": [
+						{
+							"name": "POST_Registrarcredit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"creditCardNumber\": \"4754-9821-3777-1568\",\r\n    \"creditLine\": 4000,\r\n    \"idClient\": \"631ed7db8e1a345abc661472\",\r\n    \"documentNumber\": \"481236586\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8087/api/credit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8087",
+									"path": [
+										"api",
+										"credit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_ListarCredit",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"creditCardNumber\": \"3724-6753-3805-975\",\r\n  \"creditLine\": 3000,\r\n  \"client\": {\r\n    \"idClient\": \"630313712de09031b5d84fc1\",\r\n    \"documentNumber\": \"26325478965\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.232.130:8089/api/credit",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"232",
+										"130"
+									],
+									"port": "8089",
+									"path": [
+										"api",
+										"credit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST_Credit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"creditCardNumber\": \"3724-6753-3805-975\",\r\n  \"creditLine\": 3000,\r\n  \"client\": {\r\n    \"idClient\": \"630313712de09031b5d84fc1\",\r\n    \"documentNumber\": \"26325478965\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8089/api/credit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8089",
+									"path": [
+										"api",
+										"credit"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movement",
+					"item": [
+						{
+							"name": "POST_RegistrarMovementACCOunt",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movement\": 40,\r\n    \"typeMovement\": \"retiro\",\r\n    \"phoneNumber\":\"965214784\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8088/api/movement/accountmovement",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"movement",
+										"accountmovement"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST_RegistrarMovementCredit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movement\": 300,\r\n    \"typeMovement\": \"credito\",\r\n    \"idCredit\": \"631266bcc3632f2a9b418bf4\",\r\n    \"creditCardNumber\": \"4754-9821-3777-1568\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8088/api/movement/creditmovement",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"movement",
+										"creditmovement"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET_ListarMovement",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"balance\": 51000,\r\n    \"movement\": 300,\r\n    \"typeMovement\": \"deposito\",\r\n    \"idAccount\": \"6303251f5cc86e430b334674\",\r\n    \"accountNumber\": \"20800414795328833328\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.232.130:8089/api/movement/",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"232",
+										"130"
+									],
+									"port": "8089",
+									"path": [
+										"api",
+										"movement",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST REGISTRO MOVIMIENTO ACCOUNT por cuenta",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movement\": 40,\r\n    \"typeMovement\": \"deposito\",\r\n    \"idAccount\":\"631f8561c7dceb233c2aa47a\",\r\n    \"accountNumber\":\"0235450744470689689\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8088/api/movement/accountmovement",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8088",
+									"path": [
+										"api",
+										"movement",
+										"accountmovement"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cloud",
+					"item": [
+						{
+							"name": "GET_Actuator",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.232.130:8888/apigateway-service/default",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"232",
+										"130"
+									],
+									"port": "8888",
+									"path": [
+										"apigateway-service",
+										"default"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8086/actuator/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8086",
+									"path": [
+										"actuator",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Kafka",
+					"item": [
+						{
+							"name": "Productor_kafka",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"PEPITO SAC\",\r\n    \"documentNumber\":\"21547856985\",\r\n    \"documentType\": \"RUC\",\r\n    \"phoneNumber\": \"963258745\",\r\n    \"email\": \"PEPITO@gmail.com\",\r\n    \"typeClient\": {\r\n        \"clientType\": [\"movil\",\"empresarial\"],\r\n        \"imei\": \"96589632454\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/kafka/publish",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"kafka",
+										"publish"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "redis",
+					"item": [
+						{
+							"name": "REDIS YANKI",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"idAccount\": \"631f8507c7dceb233c465412\",\r\n  \"accountNumber\": \"02354507444706897086\",\r\n  \"accountType\": \"m\",\r\n  \"minimammount\": 0,\r\n  \"client\": {\r\n      \"idClient\": \"631f6692a7aea26b5b7386ab\",\r\n        \"name\": \"PEPITO SAC\",\r\n        \"documentNumber\": \"21547856985\",\r\n        \"documentType\": \"RUC\",\r\n        \"phoneNumber\": \"963258745\",\r\n        \"email\": \"PEPITO@gmail.com\",\r\n        \"typeClient\": {\r\n            \"clientType\": [\r\n                \"movil\"\r\n            ],\r\n            \"imei\": \"96589632454\"\r\n        }\r\n    }\r\n}\r\n    \r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/savings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"savings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "bootcoin",
+					"item": [
+						{
+							"name": "REDIS_BOOTCOIN",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"4\",\r\n    \"accountNumber\":\"456465121324654\",\r\n    \"availableBalance\":100,\r\n    \"currency\":\"soles\",\r\n    \"holderName\":\"angelo\",\r\n    \"holderLastName\":\"motta\",\r\n    \"status\":\"a\",\r\n    \"bankAccountCode\":\"654654\",\r\n    \"balance\":200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9003/redis",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9003",
+									"path": [
+										"redis"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "kafka",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"4\",\r\n    \"accountNumber\":\"456465121324654\",\r\n    \"availableBalance\":100,\r\n    \"currency\":\"soles\",\r\n    \"holderName\":\"angelo\",\r\n    \"holderLastName\":\"motta\",\r\n    \"status\":\"a\",\r\n    \"bankAccountCode\":\"654654\",\r\n    \"balance\":200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9003/kafka/publish",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9003",
+									"path": [
+										"kafka",
+										"publish"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
